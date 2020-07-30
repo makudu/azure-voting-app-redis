@@ -1,0 +1,24 @@
+pipeline {
+    agent { label 'node2.example.com' }
+    stages {
+        stage('hostmachinename') {
+            steps {
+                echo "Hello World!"
+                sh "hostname"
+                sh "uptime"
+            }
+        }
+        stage('listfiles') {
+            steps {
+                echo "Hello World!"
+                sh "ls -ltr"
+            }    
+        }
+        stage('touchf123') {
+            steps {
+                echo "Hello World!"
+                sh "cd ~/ && touch f123"
+            }        
+        }
+    }
+}
